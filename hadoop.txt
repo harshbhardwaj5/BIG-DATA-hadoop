@@ -1,0 +1,94 @@
+ -------------------- to create a directory in hdfs 
+
+hdfs  dfs  -ls /
+
+ hdfs  dfs -mkdir  /hello
+ hdfs  dfs  -ls /
+Found 1 items
+drwxr-xr-x   - ec2-user supergroup          0 2019-06-26 04:49 /hello
+
+---------------------	to create a file in hadoop and cheack its size
+
+  hdfs  dfs  -ls /
+  103  hdfs  dfs -mkdir  /hello
+  104  hdfs  dfs  -ls /
+  105  yes  "hello data" >data.txt
+  106  ls -lh data
+  107  ls -lh data.txt
+  108  hdfs dfs
+
+------------------------------  to cut a file from one place to another dir. and upload it 
+  110  hdfs  dfs   -moveFromLocal data.txt  /hello
+  111  hdfs  dfs  -ls /
+  112  hdfs  dfs  -ls  /hello
+  113  hdfs  dfs  -get  /hello/data.txt         #to download data to specific directory
+  114  ls
+  115  history
+
+ note --- once data is uploaddd to hdfs it can not be changed ever and write once read many is hadoppp framework once write and read many 
+          times .once upload we cant change the data
+
+
+ -----------------------------to make a directory on other person namenode by becoming a cloud----------
+
+  116  hdfs dfs -ls   hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/
+  117  hdfs dfs -mkdir /hh
+  118  hdfs dfs -mkdir    hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/ee
+  119  hdfs dfs -mkdir    hdfs://ec2-3-90-19-144.compute-1.amazonaws.com:9000/ee
+
+
+------------------------to allocate resource and namenode manger on same machine --------------
+
+  cd hadoop2/etc/hadoop
+  123  ls
+  124  sudo mapred-site.xml.
+  125  sudo vi mapred-site.xml.
+  126  sudo vi mapred-site.xml
+  127  sudo mv mapred-site.xml.template    mapred-site.xml
+  128  sudo vi mapred-site.xml
+  129  sudo vi yarn-site.xml
+  130  yarn-daemon.sh start resourcemanager
+  131  jps
+
+
+ 
+
+
+
+----------------------------to upload the word count from a file to anothr system----------
+
+
+
+ yarn jar hadoop-mapreduce-examples-2.7.3.jar
+  149  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount
+  150  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount  /hello/data.txt
+  151  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount  /hello/data.txt    /outputtt
+  152  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount   hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/hello/data.txt  hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/ashuoutputt
+  153  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount   hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/hello/data.txt  hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/ashuou
+
+
+----------------for viewing the wordcount ------------------------------
+hdfs  dfs -ls /outputt
+
+------------------------load data to hdfs---------------------------------
+
+hdfs dfs-ls
+hdfs dfs -moveFrom Local student_data.txt(pythonfile)  /hello1
+hdfs dfs -ls /hello1
+
+
+---------------------------load data from hdfs to hive-------------------
+
+load data inpath  '/hello/student_data.txt' into student;
+
+select count(mail)  from studentss
+
+
+
+
+
+
+
+
+
+
