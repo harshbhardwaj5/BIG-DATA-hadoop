@@ -31,10 +31,10 @@ drwxr-xr-x   - ec2-user supergroup          0 2019-06-26 04:49 /hello
 
  -----------------------------to make a directory on other person namenode by becoming a cloud----------
 
-  116  hdfs dfs -ls   hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/
+  116  hdfs dfs -ls   hdfs://ec2-*******9-144.compute-1.amazonaws.com:9000/
   117  hdfs dfs -mkdir /hh
-  118  hdfs dfs -mkdir    hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/ee
-  119  hdfs dfs -mkdir    hdfs://ec2-3-90-19-144.compute-1.amazonaws.com:9000/ee
+  118  hdfs dfs -mkdir    hdfs://ec2-******-144.compute-1.amazonaws.com:9000/ee
+  119  hdfs dfs -mkdir    hdfs://ec2-3******9-144.compute-1.amazonaws.com:9000/ee
 
 
 ------------------------to allocate resource and namenode manger on same machine --------------
@@ -63,8 +63,8 @@ drwxr-xr-x   - ec2-user supergroup          0 2019-06-26 04:49 /hello
   149  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount
   150  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount  /hello/data.txt
   151  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount  /hello/data.txt    /outputtt
-  152  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount   hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/hello/data.txt  hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/ashuoutputt
-  153  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount   hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/hello/data.txt  hdfs://ec2-3-98-19-144.compute-1.amazonaws.com:9000/ashuou
+  152  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount   hdfs://ec2-3-98*****4.compute-1.amazonaws.com:9000/hello/data.txt  hdfs://ec2-3-98-**-144.compute-1.amazonaws.com:9000/ashuoutputt
+  153  yarn jar hadoop-mapreduce-examples-2.7.3.jar  wordcount   hdfs://ec2-3-9******144.compute-1.amazonaws.com:9000/hello/data.txt  hdfs://ec2-3-98-**-144.compute-1.amazonaws.com:9000/ashuou
 
 
 ----------------for viewing the wordcount ------------------------------
